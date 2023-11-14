@@ -9,7 +9,6 @@ dist
 
 #components
 About.js
-AccountFallback.js
 AddressCard.js
 BlogClass.js
 Contact.js
