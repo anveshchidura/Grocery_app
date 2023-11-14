@@ -1,0 +1,26 @@
+#Node modules
+node_modules
+
+#Parcel
+.parcel-cache
+dist
+
+.DS_Store 
+
+#components
+About.js
+AccountFallback.js
+AddressCard.js
+BlogClass.js
+Contact.js
+Help.js
+Instamart.js
+Profile.js
+ProfileClass.js
+Protected.js
+RepoClass.js
+Social.js
+
+#misc
+package.jsom
+package-lock.json
