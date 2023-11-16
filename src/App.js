@@ -19,11 +19,11 @@ import { Footer as MainFooter } from "./components/Footer";
 import Error from "./components/Error";
 import Contact from "./components/Contact";
 import Cart from "./components/Cart";
-import RestaurantMenu from "./components/RestaurantMenu";
+import StoreMenu from "./components/storeMenu";
 import PaymentPage from "./components/PaymentPage";
 import OrderSummary from "./components/OrderSummary";
 import Shimmer from "./components/Shimmer";
-import RestaurantDetails from "./components/RestaurantDetails";
+import StoreDetails from "./components/storeDetails";
 import StoreOwner from "./components/StoreOwner";
 import { UserAuth } from "./utils/context/AuthContext";
 import UserProfile from "./components/UserProfile";
@@ -67,7 +67,7 @@ const AppLayout = ( ) => {
         <Route path="/payment" element={<PaymentPage />} />
         <Route path="/ordersummary" element={<OrderSummary />} />
         <Route path="/" element={<Body />} />
-        <Route path="/restaurant/:resId" element={<RestaurantDetails />} />
+        <Route path="/store/:resId" element={<StoreDetails />} />
       </Routes>
       <MainFooter />
     </>

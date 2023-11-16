@@ -1,14 +1,14 @@
 import React from 'react'
-import CartFallback from "../components/CartFallback";
+import CartFallback from "./CartFallback";
 import ItemQuantity from "./ItemQuantity";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import useItemTotal from "../utils/useItemTotal";
-import RestaurantItemCategory from "./RestaurantItemCategory.js";
-import RestaurantNestedItemCategory from "./RestaurantNestedItemCategory.js";
+import StoreItemCategory from "./storeItemCategory.js";
+import StoreNestedItemCategory from "./storeNestedItemCategory.js";
 
 
-const RestaurantMenuList = ({menu}) => {
+const StoreMenuList = ({menu}) => {
    // get cart items from redux store
 const cartItems = useSelector((store) => store.cart.items);
 // get total price for cart items
@@ -20,9 +20,9 @@ const getItemTotal = useItemTotal();
       {menu.map((item, index) => (
         <div key={index}>
           {item.categories ? (
-            <RestaurantNestedItemCategory nestedCategory={item} />
+            <StoreNestedItemCategory nestedCategory={item} />
           ) : (
-            <RestaurantItemCategory itemCategory={item} />
+            <StoreItemCategory itemCategory={item} />
           )}
         </div>
       ))}
@@ -80,4 +80,4 @@ const getItemTotal = useItemTotal();
   )
 }
 
-export default RestaurantMenuList
+export default StoreMenuList

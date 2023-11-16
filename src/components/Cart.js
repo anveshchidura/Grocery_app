@@ -114,7 +114,7 @@ const Cart = () => {
     <div className="container mx-auto">
       <CartFallback
         text={"Your cart is empty ! "}
-        btnText={"SEE RESTAURANTS NEAR YOU"}
+        btnText={"SEE STORES NEAR YOU"}
       />
     </div>
   );

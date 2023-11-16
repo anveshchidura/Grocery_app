@@ -1,21 +1,21 @@
 import { useState, useEffect } from "react";
-//import { GET_RESTAURANT_MENU} from "../config";
+//import { GET_store_MENU} from "../config";
 
-import { restaurantMenu4 } from '../config';
+import { storeMenu4 } from '../config';
 
-const useRestaurant = (resId) => {
-  const [restaurant, setRestaurant] = useState(null); 
+const usestore = (resId) => {
+  const [store, setstore] = useState(null); 
 
   useEffect(() => {
-    getRestaurantInfo();
+    getstoreInfo();
   }, []);
 
-  const getRestaurantInfo = async () => {
+  const getstoreInfo = async () => {
     try {
       /* Live Data */
-      //const response = await fetch(GET_RESTAURANT_MENU + resId);
+      //const response = await fetch(GET_store_MENU + resId);
       //const res_data = await response.json();
-      const res_data =  restaurantMenu4;
+      const res_data =  storeMenu4;
       const menuItemsList = res_data.REGULAR.cards;
       const itemCategory = "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory";
       const NestedItemCategory = "type.googleapis.com/swiggy.presentation.food.v2.NestedItemCategory";
@@ -33,14 +33,14 @@ const useRestaurant = (resId) => {
         menu : menu.filter(value => value !== undefined)
       };
 
-      setRestaurant(modifiedData)
+      setstore(modifiedData)
     } catch (error) {
       console.log(error);
     }
   };
 
-  return restaurant;
+  return store;
 
 }
 
-export default useRestaurant;
+export default usestore;

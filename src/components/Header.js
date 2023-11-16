@@ -4,9 +4,9 @@ import { Link, useNavigate } from "react-router-dom";
 import useOnline from "../utils/useOnline";
 import { AiOutlineMenu } from "react-icons/ai";
 import { useSelector } from "react-redux";
-
+import { clearCart } from "../utils/cartSlice";
 import { UserAuth } from "../utils/context/AuthContext";
-
+import { useDispatch } from "react-redux";
 //const userprof = useSelector((store) => store.user.item); 
 let navLinks = [
   {
@@ -59,6 +59,7 @@ export const NavComponent = () => {
   const totalItemsCount = useSelector((store) => store.cart.totalItemsCount);
   console.log("Header:", totalItemsCount);
   const [menuActive, setMenuActive] = useState(false);
+  const dispatch = useDispatch();
   //const userprof = useSelector((store) => store.user.item); 
  // useEffect(()=>{  if (userprof && userprof.role === 'store-owner') {
     // If the user is a 'store-owner', only include the "Home" link
@@ -82,7 +83,9 @@ export const NavComponent = () => {
   const handleSignOut = async () => {
     try {
       await logOut();
+      dispatch(clearCart());
       navigate("/userprofile");
+      
     } catch (error) {
       console.log(error);
     }

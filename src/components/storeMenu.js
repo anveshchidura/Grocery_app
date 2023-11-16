@@ -3,52 +3,52 @@ import { RES_IMG_CDN } from "../config";
 import { MenuShimmer } from "./Shimmer";
 import MenuItem from "./MenuItem.js";
 import { AiFillStar } from "react-icons/ai";
-import useRestaurant from "../utils/useRestaurant";
-import CartFallback from "../components/CartFallback";
+import usestore from "../utils/usestore";
+import CartFallback from "./CartFallback";
 import { useSelector } from "react-redux";
 import ItemQuantity from "./ItemQuantity";
 import useItemTotal from "../utils/useItemTotal";
 import { Link } from "react-router-dom";
 
-const RestaurantMenu = () => {
+const StoreMenu = () => {
   const { resId } = useParams(); /* Read dynamic URL params */
 
-  const restaurant =
-    useRestaurant(
+  const store =
+    usestore(
       resId
-    ); /* Passing resId to Custom Hooks to fetch restaurant details and returns it */
+    ); /* Passing resId to Custom Hooks to fetch store details and returns it */
 
   // get cart items from redux store
   const cartItems = useSelector((store) => store.cart.items);
   // get total price for cart items
   const getItemTotal = useItemTotal();
 
-  return !restaurant ? (
+  return !store ? (
     <MenuShimmer />
   ) : (
     <div className="container">
       <div className="flex basis-full h-60 justify-evenly items-center bg-blue-dark text-gray p-8">
         <img
           className="w-[254px] h-[165px] mob:w-[130px] mob:[81px]"
-          src={RES_IMG_CDN + restaurant?.cloudinaryImageId}
-          alt={restaurant?.name}
+          src={RES_IMG_CDN + store?.cloudinaryImageId}
+          alt={store?.name}
         />
         <div className="flex flex-col basis-[540px] m-5 ">
           <h2 className="text-3xl max-w-[538px] font-semibold">
-            {restaurant?.name}
+            {store?.name}
           </h2>
           <p className="overflow-hidden whitespace-nowrap text-[15px] max-w-[538px]">
-            {restaurant?.cuisines.join(", ")}
+            {store?.cuisines.join(", ")}
           </p>
           <div className="flex mt-5 justify-between items-center text-sm font-semibold pb-2.5 max-w-[342px] mob:text-xs mob:font-normal">
             <div className="flex items-center px-1 py-0 gap-1">
               <AiFillStar />
-              <span>{restaurant?.avgRating}</span>
+              <span>{store?.avgRating}</span>
             </div>
             <div>|</div>
-            <div>{restaurant?.sla.slaString}</div>
+            <div>{store?.sla.slaString}</div>
             <div>|</div>
-            <div>{restaurant?.costForTwoMsg}</div>
+            <div>{store?.costForTwoMsg}</div>
           </div>
         </div>
       </div>
@@ -58,11 +58,11 @@ const RestaurantMenu = () => {
           <div className="p-5">
             <h3 className="font-bold text-lg">Recommended</h3>
             <p className="mt-3.5 w-3/5 text-gray-desc text-sm">
-              {Object.keys(restaurant?.menu?.items).length} ITEMS
+              {Object.keys(store?.menu?.items).length} ITEMS
             </p>
           </div>
           <div className="flex flex-col justify-evenly">
-            {Object.values(restaurant?.menu?.items).map((item) => (
+            {Object.values(store?.menu?.items).map((item) => (
               <MenuItem key={item.id} item={item} />
             ))}
           </div>
@@ -120,4 +120,4 @@ const RestaurantMenu = () => {
   );
 };
 
-export default RestaurantMenu;
+export default StoreMenu;

@@ -1,5 +1,5 @@
-export const filterData = (searchText, restaurants) => {
-  return restaurants.filter(restaurant => restaurant.info.name.toLowerCase().includes(searchText.toLowerCase()));
+export const filterData = (searchText, stores) => {
+  return stores.filter(store => store.info.name.toLowerCase().includes(searchText.toLowerCase()));
 }
 
 //Check if an object is empty 

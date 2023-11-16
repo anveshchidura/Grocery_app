@@ -2,7 +2,7 @@ import {RES_IMG_CDN } from "../config";
 import { AiFillStar } from "react-icons/ai";
 import { useState } from "react";
 
-export const RestaurantCard = ({ props, setRestaurants}) => {
+export const StoreCard = ({ props, setstores}) => {
   const {name, cuisines, cloudinaryImageId, avgRating, slaString, costForTwoString} = props;
   const buttonStyle = {
     backgroundColor: avgRating == "--" ? "#fff" : parseFloat(avgRating) < 4.0 ? "#db7c38":"#48c479",
@@ -11,7 +11,7 @@ export const RestaurantCard = ({ props, setRestaurants}) => {
   const [isFavourite, setIsFavourite] = useState(false);
 
   const markFavourite = (event) => {
-    setRestaurants(props);
+    setstores(props);
     setIsFavourite(!isFavourite);
     event.preventDefault();
   }

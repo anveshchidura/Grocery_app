@@ -1,8 +1,9 @@
 import { useState } from "react";
-import MenuItem from "./MenuItem.js";
 import { SlArrowDown, SlArrowUp } from "react-icons/sl";
+import StoreItemCategory from "./storeItemCategory";
 
-const RestaurantItemCategory = ({ itemCategory }) => {
+
+const StoreNestedItemCategory = ({ nestedCategory }) => {
   const [isVisible, setIsVisible] = useState(true);
 
   const toggleView = () => {
@@ -13,23 +14,25 @@ const RestaurantItemCategory = ({ itemCategory }) => {
     <div className="p-5">
       <div className="flex items-center justify-between">
         <h3 className="font-bold text-lg cursor-pointer" onClick={toggleView}>
-          {itemCategory.title} ({itemCategory.itemCards.length})
+          {nestedCategory.title}
         </h3>
         {isVisible ? (
-          <SlArrowUp onClick={toggleView} className="cursor-pointer"/>
+          <SlArrowUp onClick={toggleView} className="cursor-pointer" />
         ) : (
           <SlArrowDown onClick={toggleView} className="cursor-pointer" />
         )}
       </div>
       {isVisible && (
-        <div className="flex flex-col justify-evenly">
-          {itemCategory.itemCards.map((item) => (
-            <MenuItem key={item.id} item={item.card.info} />
+        <div>
+          {nestedCategory.categories.map((category, index) => (
+            <div key={index}>
+              <StoreItemCategory itemCategory={category} />
+            </div>
           ))}
         </div>
       )}
     </div>
   );
-};
+}
 
-export default RestaurantItemCategory
+export default StoreNestedItemCategory

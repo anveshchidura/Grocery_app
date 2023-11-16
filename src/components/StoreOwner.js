@@ -44,7 +44,7 @@ const StoreOwner = () => {
       .catch((error) => {
         console.error("Error deleting user data:", error);
       });
-      navigate('/userprofile');
+      //navigate('/userprofile');
   };
 
   return (
@@ -76,6 +76,12 @@ const StoreOwner = () => {
             </button>
           </div>
         ))}
+            <button
+               className="mt-8 px-4 py-2 bg-blue-500 text-black rounded-md border border-blue-600 hover:bg-blue-400"
+               onClick={() => navigate('/userprofile')}
+            >
+               Go to Home Page
+            </button>
       </div>
     </div>
   );

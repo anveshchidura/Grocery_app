@@ -2,7 +2,7 @@
 /**
 *
 *
-* This component is not live, just using for trying reusing exisiting RestaurantCard and RestaurantMenu Components
+* This component is not live, just using for trying reusing exisiting storeCard and storeMenu Components
 * to generate Shimmer as well
 * It's working fine but looks complicated and does not follow Single responsibility principle of component
 * Here, the same component acts as both shimmer and actual component
@@ -18,7 +18,7 @@ import { AiFillStar } from "react-icons/ai";
 
 
 
-export const RestaurantShimmer = (props) => {
+export const storeShimmer = (props) => {
   let shimmer = false;
   const {name, cuisines, cloudinaryImageId, avgRating, slaString, costForTwoString} = props;
   const buttonStyle = {
@@ -61,37 +61,37 @@ export const MenuShimmer = () => {
     shimmer = true;
   }
   return (
-    <div className="restaurant-menu">
-      <div className={shimmer? "restaurant-summary stroke-color animate" : "restaurant-summary"}>
+    <div className="store-menu">
+      <div className={shimmer? "store-summary stroke-color animate" : "store-summary"}>
         {shimmer ?         <img className="shimmer-img stroke animate" />
-         : <img className="restaurant-img" src={ RES_IMG_CDN  + restaurant?.cloudinaryImageId } alt={restaurant?.name}/> }
-        <div className="restaurant-summary-details">
-          <h2 className={shimmer ?"shimmer-w40  stroke animate": "restaurant-title"}>{restaurant?.name}</h2>
-          <p className={shimmer ? "shimmer-w20 stroke animate" : "restaurant-tags"}>{restaurant?.cuisines.join(", ")}</p>
-          <div className= { shimmer ? "shimmer-w60  stroke animate" : "restaurant-details" }>
+         : <img className="store-img" src={ RES_IMG_CDN  + store?.cloudinaryImageId } alt={store?.name}/> }
+        <div className="store-summary-details">
+          <h2 className={shimmer ?"shimmer-w40  stroke animate": "store-title"}>{store?.name}</h2>
+          <p className={shimmer ? "shimmer-w20 stroke animate" : "store-tags"}>{store?.cuisines.join(", ")}</p>
+          <div className= { shimmer ? "shimmer-w60  stroke animate" : "store-details" }>
           <div className={shimmer? "none" :"" }>
-            <div className="restaurant-rating">
-              <AiFillStar /><span>{restaurant?.avgRating}</span>
+            <div className="store-rating">
+              <AiFillStar /><span>{store?.avgRating}</span>
             </div>
             <div>|</div>
-            <div>{restaurant?.sla.slaString}</div>
+            <div>{store?.sla.slaString}</div>
             <div>|</div>
-            <div>{restaurant?.costForTwoMsg}</div>
+            <div>{store?.costForTwoMsg}</div>
           </div>
           </div>
         </div>
       </div>
 
-      <div className="restaurant-menu-content">
+      <div className="store-menu-content">
         <div className="menu-items-container">
           <div className="menu-title-wrap">
             <h3 className={shimmer ? "shimmer-w40 stroke animate" : "menu-title"}>Recommended</h3>
-            <p className={ shimmer ? "shimmer-w20 stroke animate" : "menu-count" }>{Object.keys(restaurant?.menu?.items).length} ITEMS</p>
+            <p className={ shimmer ? "shimmer-w20 stroke animate" : "menu-count" }>{Object.keys(store?.menu?.items).length} ITEMS</p>
           </div>
           <div className="menu-items-list">
             { shimmer ? Array.from({length:SHIMMER_RES_CARDS_COUNT}).map( (element, index)  =>
             <ShimmerMenuItem></ShimmerMenuItem>) : 
-             Object.values(restaurant?.menu?.items).map( item => 
+             Object.values(store?.menu?.items).map( item => 
               <MenuItem></MenuItem>
             )
            }          
@@ -142,7 +142,7 @@ const CommonShimmer = () => {
   return (
     <div className="shimmer-container">
       {Array.from({length:SHIMMER_RES_CARDS_COUNT}).map((element, index) => {
-        return <RestaurantShimmer type="shimmer"
+        return <storeShimmer type="shimmer"
         key ={index} />
       }) }
     </div>   

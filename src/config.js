@@ -12701,8 +12701,8 @@ export const restaurantList2 = {
       }]}};
 
 
-export const restaurantList3 = {
-        "restaurants" : [ {
+      export const storeList3 = {
+        "stores" : [ {
           "info": {
             "id": "348811",
             "name": "The Cubano Sandwich Co.",
@@ -12719,7 +12719,7 @@ export const restaurantList3 = {
             ],
             "avgRating": 4.3,
             "feeDetails": {
-              "restaurantId": "348811",
+              "storeId": "348811",
               "fees": [
                 {
                   "name": "BASE_DISTANCE",
@@ -12816,8 +12816,8 @@ export const restaurantList3 = {
             "reviewsSummary": {
               
             },
-            "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
-            "restaurantOfferPresentationInfo": {
+            "displayType": "store_DISPLAY_TYPE_DEFAULT",
+            "storeOfferPresentationInfo": {
               
             }
           }
@@ -34824,7 +34824,7 @@ export const restaurantMenu3 =
 
 
 
-export const restaurantMenu4 = 
+export const storeMenu4 = 
 {
         "REGULAR": {
             "cards": [
@@ -34989,7 +34989,7 @@ export const restaurantMenu4 =
                         "analytics": {
                             
                         },
-                        "hideRestaurantDetails": true
+                        "hidestoreDetails": true
                         }
                     },
                     {
@@ -35131,7 +35131,7 @@ export const restaurantMenu4 =
                         "analytics": {
                             
                         },
-                        "hideRestaurantDetails": true
+                        "hidestoreDetails": true
                         }
                     },
                     {
@@ -35277,7 +35277,7 @@ export const restaurantMenu4 =
                         "analytics": {
                             
                         },
-                        "hideRestaurantDetails": true
+                        "hidestoreDetails": true
                         }
                     },
                     {
@@ -35436,7 +35436,7 @@ export const restaurantMenu4 =
                         "analytics": {
                             
                         },
-                        "hideRestaurantDetails": true
+                        "hidestoreDetails": true
                         }
                     },
                     {
@@ -35481,7 +35481,7 @@ export const restaurantMenu4 =
                         "analytics": {
                             
                         },
-                        "hideRestaurantDetails": true
+                        "hidestoreDetails": true
                         }
                     }
                     ],
@@ -35782,7 +35782,7 @@ export const restaurantMenu4 =
                             "analytics": {
                                 
                             },
-                            "hideRestaurantDetails": true
+                            "hidestoreDetails": true
                             }
                         },
                         {
@@ -36065,7 +36065,7 @@ export const restaurantMenu4 =
                             "analytics": {
                                 
                             },
-                            "hideRestaurantDetails": true
+                            "hidestoreDetails": true
                             }
                         },
                         {
@@ -36348,7 +36348,7 @@ export const restaurantMenu4 =
                             "analytics": {
                                 
                             },
-                            "hideRestaurantDetails": true
+                            "hidestoreDetails": true
                             }
                         },
                         {
@@ -36635,7 +36635,7 @@ export const restaurantMenu4 =
                             "analytics": {
                                 
                             },
-                            "hideRestaurantDetails": true
+                            "hidestoreDetails": true
                             }
                         },
                         {
@@ -36918,7 +36918,7 @@ export const restaurantMenu4 =
                             "analytics": {
                                 
                             },
-                            "hideRestaurantDetails": true
+                            "hidestoreDetails": true
                             }
                         },
                         {
@@ -37201,7 +37201,7 @@ export const restaurantMenu4 =
                             "analytics": {
                                 
                             },
-                            "hideRestaurantDetails": true
+                            "hidestoreDetails": true
                             }
                         },
                         {
@@ -37488,7 +37488,7 @@ export const restaurantMenu4 =
                             "analytics": {
                                 
                             },
-                            "hideRestaurantDetails": true
+                            "hidestoreDetails": true
                             }
                         }
                         ]
@@ -37779,7 +37779,7 @@ export const restaurantMenu4 =
                             "analytics": {
                                 
                             },
-                            "hideRestaurantDetails": true
+                            "hidestoreDetails": true
                             }
                         },
                         {
@@ -38069,7 +38069,7 @@ export const restaurantMenu4 =
                             "analytics": {
                                 
                             },
-                            "hideRestaurantDetails": true
+                            "hidestoreDetails": true
                             }
                         },
                         {
@@ -38355,7 +38355,7 @@ export const restaurantMenu4 =
                             "analytics": {
                                 
                             },
-                            "hideRestaurantDetails": true
+                            "hidestoreDetails": true
                             }
                         },
                         {
@@ -38645,7 +38645,7 @@ export const restaurantMenu4 =
                             "analytics": {
                                 
                             },
-                            "hideRestaurantDetails": true
+                            "hidestoreDetails": true
                             }
                         }
                         ]
@@ -38940,7 +38940,7 @@ export const restaurantMenu4 =
                         "analytics": {
                             
                         },
-                        "hideRestaurantDetails": true
+                        "hidestoreDetails": true
                         }
                     },
                     {
@@ -39227,7 +39227,7 @@ export const restaurantMenu4 =
                         "analytics": {
                             
                         },
-                        "hideRestaurantDetails": true
+                        "hidestoreDetails": true
                         }
                     },
                     {
@@ -39510,7 +39510,7 @@ export const restaurantMenu4 =
                         "analytics": {
                             
                         },
-                        "hideRestaurantDetails": true
+                        "hidestoreDetails": true
                         }
                     }
                     ]
@@ -39527,7 +39527,7 @@ export const restaurantMenu4 =
         "name": "The Cubano Sandwich Co.",
         "city": "Bangalore",
         "slugs": {
-        "restaurant": "the-jolly-nawabs-hsr-hsr",
+        "store": "the-jolly-nawabs-hsr-hsr",
         "city": "bangalore"
         },
         "uniqueId": "e51e6528-4859-48c8-8fed-e84c17dc2d76",
@@ -39542,7 +39542,7 @@ export const restaurantMenu4 =
         ],
         "avgRating": 4.3,
         "feeDetails": {
-        "restaurantId": "348811",
+        "storeId": "348811",
         "fees": [
             {
             "name": "distance",
@@ -39563,7 +39563,7 @@ export const restaurantMenu4 =
         "avgRatingString": "4.3",
         "totalRatingsString": "1K+ ratings",
         "sla": {
-        "restaurantId": "348811",
+        "storeId": "348811",
         "deliveryTime": 48,
         "minDeliveryTime": 48,
         "maxDeliveryTime": 48,
@@ -39581,7 +39581,7 @@ export const restaurantMenu4 =
         "nextCloseTime": "2023-11-11 00:00:00",
         "visibility": true,
         "opened": true,
-        "restaurantClosedMeta": {
+        "storeClosedMeta": {
             
         }
         },
@@ -39591,24 +39591,24 @@ export const restaurantMenu4 =
             {
             "meta": "50% off | Use TRYNEW",
             "discountType": "Percentage",
-            "operationType": "RESTAURANT"
+            "operationType": "store"
             },
             {
             "meta": "20% off | Use PARTY",
             "discountType": "Percentage",
-            "operationType": "RESTAURANT"
+            "operationType": "store"
             }
         ],
         "descriptionList": [
             {
             "meta": "50% off up to ₹100 | Use code TRYNEW",
             "discountType": "Percentage",
-            "operationType": "RESTAURANT"
+            "operationType": "store"
             },
             {
             "meta": "20% off | Use code PARTY",
             "discountType": "Percentage",
-            "operationType": "RESTAURANT"
+            "operationType": "store"
             }
         ],
         "visible": true
@@ -39639,24 +39639,24 @@ export const restaurantMenu4 =
             {
             "meta": "50% off | Use TRYNEW",
             "discountType": "Percentage",
-            "operationType": "RESTAURANT"
+            "operationType": "store"
             },
             {
             "meta": "20% off | Use PARTY",
             "discountType": "Percentage",
-            "operationType": "RESTAURANT"
+            "operationType": "store"
             }
         ],
         "descriptionList": [
             {
             "meta": "50% off up to ₹100 | Use code TRYNEW",
             "discountType": "Percentage",
-            "operationType": "RESTAURANT"
+            "operationType": "store"
             },
             {
             "meta": "20% off | Use code PARTY",
             "discountType": "Percentage",
-            "operationType": "RESTAURANT"
+            "operationType": "store"
             }
         ],
         "couponDetailsCta": "View coupon details"
@@ -39680,7 +39680,7 @@ export const restaurantMenu4 =
         }
         ],
         "headerBanner": {
-        "url": "swiggy://webview?is_external=false&webview_url=https://www.swiggy.com/restaurant-info/348811"
+        "url": "swiggy://webview?is_external=false&webview_url=https://www.swiggy.com/store-info/348811"
         },
         "expectationNotifiers": [
         {
