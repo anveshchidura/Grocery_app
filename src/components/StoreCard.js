@@ -23,7 +23,7 @@ export const StoreCard = ({ props, setstores}) => {
           <span className={isFavourite? "text-red" : ""} 
           onClick={(e) => {markFavourite(e)}} >&#x2764;</span>
         </div>
-        <img className="w-full mob:w-[130px]" src={ RES_IMG_CDN  + cloudinaryImageId } alt={name}/>      
+        <img className="w-full mob:w-[130px]" src= {'https://cdn-icons-png.flaticon.com/512/5016/5016804.png'} alt={name}/>      
       </div>
       <div className="">
         <h6 className="text-base font-bold w-3/5 tracking-normal">{name}</h6>

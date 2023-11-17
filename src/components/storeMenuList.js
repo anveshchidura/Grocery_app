@@ -70,7 +70,7 @@ const getItemTotal = useItemTotal();
             <div className="card-container w-[348px]">
               <CartFallback
                 text={
-                  "Good food is always cooking! Go ahead, order some yummy items from the menu."
+                  "Add items to the cart and order groceries from nearby stores!"
                 }
               />
             </div>

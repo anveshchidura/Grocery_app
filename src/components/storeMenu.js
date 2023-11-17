@@ -30,7 +30,7 @@ const StoreMenu = () => {
       <div className="flex basis-full h-60 justify-evenly items-center bg-blue-dark text-gray p-8">
         <img
           className="w-[254px] h-[165px] mob:w-[130px] mob:[81px]"
-          src={RES_IMG_CDN + store?.cloudinaryImageId}
+          src={'https://cdn-icons-png.flaticon.com/512/5016/5016804.png'}
           alt={store?.name}
         />
         <div className="flex flex-col basis-[540px] m-5 ">
@@ -109,7 +109,7 @@ const StoreMenu = () => {
             <div className="card-container w-[348px]">
               <CartFallback
                 text={
-                  "Good food is always cooking! Go ahead, order some yummy items from the menu."
+                  "Add items to the cart to order from nearby grocery stores"
                 }
               />
             </div>

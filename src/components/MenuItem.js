@@ -40,7 +40,7 @@ const MenuItem = ({ item }) => {
         {imageId && (
           <img
             className="w-[118px] h-[96px]"
-            src={ITEM_IMG_CDN + imageId}
+            src={'https://cdn-icons-png.flaticon.com/512/5016/5016804.png'}
             alt={item?.name}
           />
         )}

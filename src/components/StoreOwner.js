@@ -20,6 +20,8 @@ const StoreOwner = () => {
           const usersArray = Object.keys(users).map((displayName) => ({
             displayName,
             userData: users[displayName],
+            addressDescription : users[displayName].address?.addressDescription || "No address provided"
+            
           }));
 
           setUsersData(usersArray); 
@@ -59,6 +61,8 @@ const StoreOwner = () => {
           >
             <h2 className="text-lg font-semibold mb-2">User Name: {user.displayName}</h2>
             <h3 className="text-md font-semibold mb-2">Cart Items:</h3>
+            <h3 className="text-md font-semibold mb-2">Address: {user.addressDescription}</h3>
+         
             <ul>
               {Object.values(user.userData.cart).map((item, index) => (
                 <li key={index} className="list-disc ml-4 ">

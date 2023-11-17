@@ -25,9 +25,13 @@ const Cart = () => {
 
    // Push Function
    const fbpush = () => {
-    if (user) {
+    if (user && !isEmptyObject(cartItems) && !isEmptyObject(address)) {
       const userCartRef = ref(database, 'users/' + user.displayName + '/cart');
-      set(userCartRef, cartItems).catch(alert);
+      const userAddressRef = ref(database, 'users/' + user.displayName + '/address');
+      
+      set(userCartRef, cartItems)
+        .then(() => set(userAddressRef, address))
+        .catch((error) => alert("Error updating data: " + error.message));
     }
   }
 
