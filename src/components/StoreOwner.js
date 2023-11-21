@@ -60,8 +60,9 @@ const StoreOwner = () => {
             className="bg-white p-4 rounded shadow-md"
           >
             <h2 className="text-lg font-semibold mb-2">User Name: {user.displayName}</h2>
-            <h3 className="text-md font-semibold mb-2">Cart Items:</h3>
+            
             <h3 className="text-md font-semibold mb-2">Address: {user.addressDescription}</h3>
+            <h3 className="text-md font-semibold mb-2">Cart Items:</h3>
          
             <ul>
               {Object.values(user.userData.cart).map((item, index) => (

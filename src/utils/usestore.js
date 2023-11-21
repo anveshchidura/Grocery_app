@@ -12,18 +12,15 @@ const usestore = (resId) => {
 
   const getstoreInfo = async () => {
     try {
-      /* Live Data */
-      //const response = await fetch(GET_store_MENU + resId);
-      //const res_data = await response.json();
       const res_data =  storeMenu4;
       const menuItemsList = res_data.REGULAR.cards;
-      const itemCategory = "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory";
-      const NestedItemCategory = "type.googleapis.com/swiggy.presentation.food.v2.NestedItemCategory";
+      const itemCategory = "1";
+      //const NestedItemCategory = "type.googleapis.com/swiggy.presentation.food.v2.NestedItemCategory";
 
       
 
       const menu = menuItemsList.map(item => {
-        if((item.card.card["@type"] === itemCategory) || (item.card.card["@type"] === NestedItemCategory) ) {
+        if((item.card.card["@type"] === itemCategory)  ) {
           return item.card.card;
         }
       })

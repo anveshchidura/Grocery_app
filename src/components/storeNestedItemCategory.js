@@ -1,38 +1,35 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { SlArrowDown, SlArrowUp } from "react-icons/sl";
 import StoreItemCategory from "./storeItemCategory";
 
-
 const StoreNestedItemCategory = ({ nestedCategory }) => {
-  const [isVisible, setIsVisible] = useState(true);
+  const [isExpanded, setIsExpanded] = useState(true);
 
-  const toggleView = () => {
-    setIsVisible(!isVisible);
+  const handleToggle = () => {
+    setIsExpanded(prevState => !prevState);
+  };
+
+  const renderCategories = () => {
+    return nestedCategory.categories.map((category, index) => (
+      <StoreItemCategory key={category.id || index} itemCategory={category} />
+    ));
   };
 
   return (
     <div className="p-5">
       <div className="flex items-center justify-between">
-        <h3 className="font-bold text-lg cursor-pointer" onClick={toggleView}>
+        <h3 onClick={handleToggle} className="font-bold text-lg cursor-pointer">
           {nestedCategory.title}
         </h3>
-        {isVisible ? (
-          <SlArrowUp onClick={toggleView} className="cursor-pointer" />
+        {isExpanded ? (
+          <SlArrowUp onClick={handleToggle} className="cursor-pointer" />
         ) : (
-          <SlArrowDown onClick={toggleView} className="cursor-pointer" />
+          <SlArrowDown onClick={handleToggle} className="cursor-pointer" />
         )}
       </div>
-      {isVisible && (
-        <div>
-          {nestedCategory.categories.map((category, index) => (
-            <div key={index}>
-              <StoreItemCategory itemCategory={category} />
-            </div>
-          ))}
-        </div>
-      )}
+      {isExpanded && <div>{renderCategories()}</div>}
     </div>
   );
 }
 
-export default StoreNestedItemCategory
+export default StoreNestedItemCategory;

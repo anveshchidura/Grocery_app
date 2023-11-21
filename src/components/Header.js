@@ -1,7 +1,7 @@
 import logo from "../../assets/images/logo-main.png";
 import { useContext, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import useOnline from "../utils/useOnline";
+//import useOnline from "../utils/useOnline";
 import { AiOutlineMenu } from "react-icons/ai";
 import { useSelector } from "react-redux";
 import { clearCart } from "../utils/cartSlice";
@@ -12,13 +12,8 @@ let navLinks = [
   {
     title: "Home",
     path: "/",
-  },
-  {
-  title: "Store",
-  path: "/store",
   }
 ];
-
 
 
 export const Title = () => {
@@ -51,6 +46,32 @@ export const Intro = () => {
   );
 };
 
+const useOnline = () => {
+  const [isOnline, setIsOnline] = useState(true);
+  
+  const handleOnline = () => {
+    setIsOnline(true);
+  }
+
+  const handleOffline = () => {
+    setIsOnline(false);
+  }
+
+  useEffect(()=>{
+    window.addEventListener("online", handleOnline);
+    window.addEventListener("offline",handleOffline );
+    
+    return (()=>{
+      window.removeEventListener("online", handleOnline);
+      window.removeEventListener("offline", handleOffline)
+
+    })
+  }, []);
+
+  return isOnline;
+
+}
+
 export const NavComponent = () => {
   const { user, logOut } = UserAuth();
   const navigate = useNavigate();
@@ -60,16 +81,6 @@ export const NavComponent = () => {
   console.log("Header:", totalItemsCount);
   const [menuActive, setMenuActive] = useState(false);
   const dispatch = useDispatch();
-  //const userprof = useSelector((store) => store.user.item); 
- // useEffect(()=>{  if (userprof && userprof.role === 'store-owner') {
-    // If the user is a 'store-owner', only include the "Home" link
-  //  navLinks = [
-  //    {
-   //     title: "Home",
-  //      path: "/",
-  //    },
-  //  ];
-  // }},[])
   ;
 
 

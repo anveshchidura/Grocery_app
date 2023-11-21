@@ -1,6 +1,4 @@
-//Config Driven UI - Mock Data from API
 
-/* CDN for Restaurant, Menu items and Fallback Images  */
 export const RES_IMG_CDN =
   "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/";
 export const ITEM_IMG_CDN =
@@ -10,7 +8,6 @@ export const CART_FALLBACK_IMG =
   "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/2xempty_cart_yfxml0";
 
 
-/* Shimmer - Number of cards & items to be displayed */
 export const SHIMMER_RES_CARDS_COUNT = 8;
 export const SHIMMER_MENU_ITEMS_COUNT = 4;
 
@@ -56,14 +53,12 @@ export const storeList3 = {
         "info": {
           "id": "348811",
           "name": "Suvidha SuperMarket",
-          "cloudinaryImageId": "gkm33nhcda7ahujr1wcp",
           "cuisines": [
             "Indian",
             "Fast-food",
           ],
           "avgRating": 4.3,
           "slaString": "30 mins",
-          "costForTwoString": "₹300 for two"
         }
       }
     ]

@@ -3,19 +3,19 @@ import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 const PaymentPage = () => {
-  const payment = useSelector((store) => store.cart.paymentMethod);
+  const paymentMethod = useSelector((store) => store.cart.paymentMethod?.paymentMethod);
   const navigate = useNavigate();
+
   useEffect(() => {
-    //Mock payment page  - Succesful payment
-    if (true) {
-      navigate("/ordersummary");
-    }
-  }, []);
+    // Navigate to order summary page
+    // Add your actual payment logic here
+    navigate("/ordersummary");
+  }, [navigate]);
 
   return (
     <div className="container flex flex-col justify-around mob:flex-col">
       <div className="flex justify-center my-10">
-        <div>{payment.paymentMethod}</div>
+        <div>{paymentMethod || 'Processing...'}</div>
       </div>
     </div>
   );

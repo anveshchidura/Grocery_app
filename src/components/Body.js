@@ -1,17 +1,41 @@
-
-import { StoreCard } from './storeCard';
+import { StoreCard } from './StoreCard';
 import { useState, useEffect } from 'react';
 import Shimmer from './Shimmer'; /* Shimmer component to display before page load */
 import { GET_storeS_LIST } from '../config'; /* url to get store data */
 import { Link } from 'react-router-dom';
 import { filterData } from '../utils/helper';
-import useOnline from "../utils/useOnline";
+//import useOnline from "../utils/useOnline";
 import useLocalStorage from '../utils/useLocalStorage';
 import { storeList3 } from '../config'; /* Mock Data for testing in mobile*/
 import { UserAuth } from "../utils/context/AuthContext";
 import SignIn from "./SignIn";
 import UserProfile from './UserProfile';
 
+const useOnline = () => {
+  const [isOnline, setIsOnline] = useState(true);
+  
+  const handleOnline = () => {
+    setIsOnline(true);
+  }
+
+  const handleOffline = () => {
+    setIsOnline(false);
+  }
+
+  useEffect(()=>{
+    window.addEventListener("online", handleOnline);
+    window.addEventListener("offline",handleOffline );
+    
+    return (()=>{
+      window.removeEventListener("online", handleOnline);
+      window.removeEventListener("offline", handleOffline)
+
+    })
+  }, []);
+
+  return isOnline;
+
+};
 const Body = () => {
   const [searchText, setSearchText] = useState();
   const [allstores, setAllstores] = useState([]);
@@ -29,12 +53,6 @@ const Body = () => {
 
   const getstores = async () => {
     try {
-      /* Live Data */
-      //const response = await fetch(GET_storeS_LIST);
-     // const res_data = await response.json();
-      
-  
-      /* Mock Data */ 
       const res_data = storeList3;
 
       setAllstores(res_data?.stores);

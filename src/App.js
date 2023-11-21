@@ -17,7 +17,6 @@ import * as MainHeader from "./components/Header";
 import Body from "./components/Body";
 import { Footer as MainFooter } from "./components/Footer";
 import Error from "./components/Error";
-import Contact from "./components/Contact";
 import Cart from "./components/Cart";
 import StoreMenu from "./components/storeMenu";
 import PaymentPage from "./components/PaymentPage";
@@ -35,8 +34,7 @@ import StripeContainer from "./components/StripeContainer";
 
 const stripePromise = loadStripe(stripe_public_key);
 
-const Instamart = lazy(() => import("./components/Instamart"));
-const Help = lazy(() => import("./components/Help"));
+
 
 const App = () => {
   return (
@@ -62,7 +60,6 @@ const AppLayout = ( ) => {
     <>
       <MainHeader.Header />
       <Routes>
-        <Route path="/contact" element={<Contact />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/payment" element={<PaymentPage />} />
         <Route path="/ordersummary" element={<OrderSummary />} />

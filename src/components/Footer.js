@@ -1,8 +1,7 @@
-
 export const Footer = () => {
   return (
-    <div className="justify-around w-full shadow h-9 opacity bg-yellow text-blue-dark text-center leading-[3.5rem] bottom-0 fixed z-40 align-middle">
-     <span className="text-center">Created By Group-18</span>
-    </div>
-  )
+    <footer className="flex justify-around items-center w-full shadow h-9 bg-yellow text-blue-dark fixed bottom-0 z-40">
+      <span>Created By Group-18</span>
+    </footer>
+  );
 };

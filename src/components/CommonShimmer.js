@@ -1,14 +1,4 @@
 
-/**
-*
-*
-* This component is not live, just using for trying reusing exisiting storeCard and storeMenu Components
-* to generate Shimmer as well
-* It's working fine but looks complicated and does not follow Single responsibility principle of component
-* Here, the same component acts as both shimmer and actual component
-*
-*/
-
 
 
 import { SHIMMER_RES_CARDS_COUNT } from '../config';

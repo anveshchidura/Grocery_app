@@ -1,35 +1,35 @@
-import { useState } from "react";
-import MenuItem from "./MenuItem.js";
+import React, { useState } from "react";
+import MenuItem from "./MenuItem";
 import { SlArrowDown, SlArrowUp } from "react-icons/sl";
 
 const StoreItemCategory = ({ itemCategory }) => {
-  const [isVisible, setIsVisible] = useState(true);
+  const [isExpanded, setIsExpanded] = useState(true);
 
-  const toggleView = () => {
-    setIsVisible(!isVisible);
+  const handleToggle = () => {
+    setIsExpanded(!isExpanded);
+  };
+
+  const renderMenuItems = () => {
+    return itemCategory.itemCards.map((item) => (
+      <MenuItem key={item.id} item={item.card.info} />
+    ));
   };
 
   return (
     <div className="p-5">
       <div className="flex items-center justify-between">
-        <h3 className="font-bold text-lg cursor-pointer" onClick={toggleView}>
-          {itemCategory.title} ({itemCategory.itemCards.length})
+        <h3 onClick={handleToggle} className="font-bold text-lg cursor-pointer">
+          {itemCategory.title} ({itemCategory.itemCards?.length ?? 0})
         </h3>
-        {isVisible ? (
-          <SlArrowUp onClick={toggleView} className="cursor-pointer"/>
+        {isExpanded ? (
+          <SlArrowUp onClick={handleToggle} className="cursor-pointer" />
         ) : (
-          <SlArrowDown onClick={toggleView} className="cursor-pointer" />
+          <SlArrowDown onClick={handleToggle} className="cursor-pointer" />
         )}
       </div>
-      {isVisible && (
-        <div className="flex flex-col justify-evenly">
-          {itemCategory.itemCards.map((item) => (
-            <MenuItem key={item.id} item={item.card.info} />
-          ))}
-        </div>
-      )}
+      {isExpanded && <div className="flex flex-col justify-evenly">{renderMenuItems()}</div>}
     </div>
   );
 };
 
-export default StoreItemCategory
+export default StoreItemCategory;
